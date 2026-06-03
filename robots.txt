@@ -1,0 +1,58 @@
+# 주식회사 한지 (HANJI Inc.)
+# https://hanjilabs.co.kr
+
+# 모든 검색엔진 허용
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Crawl-delay: 1
+
+# 네이버 — Yeti 봇
+User-agent: Yeti
+Allow: /
+Disallow: /api/
+
+# 네이버 모바일
+User-agent: NaverBot
+Allow: /
+
+# 구글
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+
+# 구글 이미지
+User-agent: Googlebot-Image
+Allow: /
+
+# 다음 / 카카오
+User-agent: Daum
+Allow: /
+
+User-agent: Daumoa
+Allow: /
+
+# 빙
+User-agent: bingbot
+Allow: /
+Disallow: /api/
+
+# 야후
+User-agent: Slurp
+Allow: /
+
+# 페이스북 (OG 미리보기)
+User-agent: facebookexternalhit
+Allow: /
+
+# 카카오톡 (OG 미리보기)
+User-agent: kakaotalk-scrap
+Allow: /
+
+# 트위터 카드 봇
+User-agent: Twitterbot
+Allow: /
+
+# Sitemap
+Sitemap: https://hanjilabs.co.kr/sitemap.xml

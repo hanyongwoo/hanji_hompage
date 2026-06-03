@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBFAF7"/>
+      <stop offset="100%" stop-color="#E8F2EE"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="80%" cy="20%" r="60%">
+      <stop offset="0%" stop-color="#2E7D6B" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#2E7D6B" stop-opacity="0"/>
+    </radialGradient>
+    <style>
+      text { font-family: 'Apple SD Gothic Neo', 'Noto Sans CJK KR', 'Malgun Gothic', sans-serif; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- 좌측 상단 로고 영역 -->
+  <circle cx="92" cy="92" r="9" fill="#2E7D6B"/>
+  <text x="116" y="100" font-size="22" font-weight="800" fill="#1F2A37">HANJI Inc.</text>
+
+  <!-- Eyebrow -->
+  <line x1="80" y1="220" x2="124" y2="220" stroke="#2E7D6B" stroke-width="2"/>
+  <text x="140" y="226" font-size="20" font-weight="700" fill="#2E7D6B" letter-spacing="3">FULL-STACK · AI · COMMERCE</text>
+
+  <!-- 메인 카피 -->
+  <text x="80" y="320" font-size="76" font-weight="700" fill="#1F2A37" letter-spacing="-2">비즈니스의 문제를</text>
+  <text x="80" y="410" font-size="76" font-weight="800" fill="#2E7D6B" letter-spacing="-2">코드로 풀어내는 일</text>
+
+  <!-- 서브 카피 -->
+  <text x="80" y="490" font-size="26" font-weight="500" fill="#4B5A6B">12년 차 시니어 개발자가 함께하는 풀스택 웹 서비스 개발</text>
+
+  <!-- 우측 하단 도메인 -->
+  <text x="80" y="560" font-size="22" font-weight="700" fill="#8C97A3">hanjilabs.co.kr</text>
+
+  <!-- 신뢰 배지 영역 -->
+  <g transform="translate(80, 80)">
+    <rect x="900" y="430" width="220" height="60" rx="30" fill="#FFFFFF" stroke="#E5E1D8" stroke-width="1.5"/>
+    <text x="1010" y="468" font-size="16" font-weight="700" fill="#1F2A37" text-anchor="middle">★★★★★ 5.0 · 크몽 후기</text>
+  </g>
+</svg>
