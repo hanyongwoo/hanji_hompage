@@ -52,6 +52,7 @@
   "logo": "https://hanjilabs.co.kr/logo.png",
   "description": "12년 경력의 시니어 개발자가 직접 함께하는 풀스택 웹 서비스 개발 회사",
   "email": "nasms88@naver.com",
+  "telephone": "+82-10-8677-3480",
   "founder": {
     "@type": "Person",
     "name": "한용우"
@@ -60,8 +61,7 @@
     "@type": "PostalAddress",
     "addressCountry": "KR",
     "addressRegion": "경기도",
-    "addressLocality": "김포시",
-    "streetAddress": "김포한강2로"
+    "addressLocality": "김포시"
   },
   "taxID": "704-86-02287",
   "sameAs": []
@@ -88,14 +88,14 @@
   "image": "https://hanjilabs.co.kr/og-image.png",
   "url": "https://hanjilabs.co.kr/",
   "email": "nasms88@naver.com",
+  "telephone": "+82-10-8677-3480",
   "priceRange": "₩₩",
   "areaServed": "KR",
   "address": {
     "@type": "PostalAddress",
     "addressCountry": "KR",
     "addressRegion": "경기도",
-    "addressLocality": "김포시",
-    "streetAddress": "김포한강2로"
+    "addressLocality": "김포시"
   },
   "serviceType": ["풀스택 웹 개발", "AI · LLM 개발", "쇼핑몰 구축", "REST API 개발", "클라우드 운영"],
   "aggregateRating": {
@@ -171,7 +171,7 @@
       "name": "개발자 경력이 어떻게 되시나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "현대자동차 계열사 4년, 신세계아이앤씨 4년, 오비맥주 PM 4년 등 대기업에서 12년간 실무 경험을 쌓은 시니어 풀스택 개발자가 직접 작업합니다."
+        "text": "국내 대기업 커넥티드카·엔터프라이즈 시스템 개발, 신세계아이앤씨 4년, 오비맥주 PM 4년 등 대기업에서 12년간 실무 경험을 쌓은 시니어 풀스택 개발자가 직접 작업합니다."
       }
     },
     {
@@ -1156,6 +1156,78 @@
     font-weight: 700;
   }
 
+  /* ── PORTFOLIO ── */
+  #portfolio {
+    padding: 110px 60px;
+    background: var(--surface);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 56px;
+  }
+  .portfolio-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform .3s, box-shadow .3s, border-color .3s;
+    display: flex;
+    flex-direction: column;
+  }
+  .portfolio-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary);
+  }
+  .portfolio-thumb {
+    aspect-ratio: 16 / 10;
+    background:
+      repeating-linear-gradient(45deg, var(--bg2) 0, var(--bg2) 12px, #EFEBE2 12px, #EFEBE2 24px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid var(--line);
+  }
+  .portfolio-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .portfolio-body { padding: 26px 26px 28px; display: flex; flex-direction: column; flex-grow: 1; }
+  .portfolio-cat {
+    font-size: 11px;
+    color: var(--primary);
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+  }
+  .portfolio-title {
+    font-family: 'SUIT Variable', SUIT, -apple-system, sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+  }
+  .portfolio-pl {
+    font-size: 13.5px;
+    color: var(--sub);
+    line-height: 1.8;
+    margin-bottom: 8px;
+  }
+  .portfolio-pl strong { color: var(--primary-dk); font-weight: 700; }
+  .portfolio-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 16px; }
+  .portfolio-empty {
+    text-align: center;
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 36px;
+  }
+
   /* ── PROMISE ── */
   #promise {
     padding: 110px 60px;
@@ -1591,6 +1663,7 @@
     .section-intro { font-size: 14.5px; margin-bottom: 36px; }
     .services-grid { grid-template-columns: 1fr; }
     .service-card { padding: 28px 22px; }
+    .portfolio-grid { grid-template-columns: 1fr; gap: 16px; }
     .stack-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
     .stack-group { padding: 20px 16px; }
     .process-steps { grid-template-columns: 1fr; gap: 28px; }
@@ -1643,6 +1716,8 @@
   <ul id="navMenu">
     <li><a href="#career">대표 경력</a></li>
     <li><a href="#services">서비스</a></li>
+    <!-- 포트폴리오 콘텐츠 채운 뒤 아래 한 줄 주석 해제 -->
+    <!-- <li><a href="#portfolio">포트폴리오</a></li> -->
     <li><a href="#reviews">고객 후기</a></li>
     <li><a href="#process">진행절차</a></li>
     <li><a href="#contact" class="nav-cta">문의하기</a></li>
@@ -1749,22 +1824,22 @@
     </div>
     <div class="right reveal">
       <p>
-        대표 개발자는 <strong>신세계아이앤씨</strong>, <strong>오비맥주</strong>, <strong>현대자동차 계열사</strong> 등
-        국내 대기업에서 12년간 실무를 경험했습니다. 단순한 외주 개발사가 아닌,
+        대표 개발자는 <strong>신세계아이앤씨</strong>, <strong>오비맥주</strong>를 거쳐 현재
+        <strong>국내 대기업 커넥티드카 · 엔터프라이즈 시스템</strong> 개발까지 12년간 실무를 경험했습니다. 단순한 외주 개발사가 아닌,
         엔터프라이즈 환경에서 다져진 안정성과 책임감을 그대로 담아 작업합니다.
       </p>
     </div>
   </div>
   <div class="career-list">
     <div class="career-card reveal">
-      <div class="period">2021 — 2025 · 4년</div>
-      <div class="company">현대자동차 계열사</div>
+      <div class="period">2021 — 현재</div>
+      <div class="company">국내 대기업 · 커넥티드카</div>
       <div class="role">풀스택 개발 · 시스템 설계</div>
       <p class="desc">
-        현대자동차 그룹 계열사에서 핵심 시스템의 풀스택 개발을 맡아,
-        설계부터 배포·운영까지 엔터프라이즈급 품질로 수행했습니다.
+        국내 대기업의 커넥티드카·엔터프라이즈 핵심 시스템 풀스택 개발을 맡아,
+        설계부터 배포·운영까지 엔터프라이즈급 품질로 수행하고 있습니다.
       </p>
-      <span class="group-tag">현대자동차 그룹</span>
+      <span class="group-tag">엔터프라이즈 시스템</span>
     </div>
     <div class="career-card reveal">
       <div class="period">2013 — 2017 · 4년</div>
@@ -2031,6 +2106,83 @@
   </div>
 </section>
 
+<!-- PORTFOLIO -->
+<!--
+  ███ 포트폴리오 콘텐츠 채우는 법 ███
+  아래 .portfolio-card 를 실제 프로젝트로 교체하세요. 카드당 채울 4가지:
+   1) 썸네일: <div class="portfolio-thumb"> 안의 안내문구를
+              <img src="images/프로젝트명.png" alt="프로젝트 설명"> 로 교체
+              (이미지 비율 16:10 권장, images/ 폴더에 넣기)
+   2) 카테고리: .portfolio-cat (예: 웹 서비스 / 브라우저 확장 / 프로토타입)
+   3) 제목: .portfolio-title (예: 파나나 / 탱크옥션 익스텐션 / 로우메이트)
+   4) 문제→해결 한 줄: .portfolio-pl
+              (예: "수기 정산으로 새던 시간을 <strong>자동 집계 대시보드</strong>로 줄였습니다.")
+   * 클라이언트 동의가 없으면 회사명은 빼고 "이커머스 스타트업"처럼 익명화하세요.
+   * 카드 수는 자유 — 3개 권장, 최소 2개. 콘텐츠가 준비될 때까지는 이 섹션을
+     nav(#portfolio 링크)와 함께 숨겨두는 것도 방법입니다.
+-->
+<!-- 콘텐츠 채우면 아래 <section> 의 hidden 속성과 style="display:none" 을 지워 공개하세요 -->
+<section id="portfolio" hidden style="display:none">
+  <div class="section-label">PORTFOLIO</div>
+  <h2 class="section-title reveal">말보다 <span>실제 결과물</span>로 보여드립니다</h2>
+  <p class="section-intro reveal">
+    어떻게 일하는지뿐 아니라, 실제로 무엇을 만들었는지가 가장 정직한 증거라고 생각합니다.
+    직접 설계하고 개발한 프로젝트의 일부를 소개합니다.
+  </p>
+  <div class="portfolio-grid">
+
+    <!-- ▼ 예시 카드 1 — 실제 내용으로 교체하세요 -->
+    <div class="portfolio-card reveal">
+      <div class="portfolio-thumb">스크린샷 들어갈 자리 (16:10)</div>
+      <div class="portfolio-body">
+        <div class="portfolio-cat">웹 서비스</div>
+        <h3 class="portfolio-title">프로젝트명 (예: 파나나)</h3>
+        <p class="portfolio-pl">
+          어떤 문제가 있었고 → <strong>어떻게 풀었는지</strong>를 한 줄로 적어주세요.
+        </p>
+        <div class="portfolio-tags">
+          <span class="tag">Next.js</span>
+          <span class="tag">Spring Boot</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ▼ 예시 카드 2 -->
+    <div class="portfolio-card reveal">
+      <div class="portfolio-thumb">스크린샷 들어갈 자리 (16:10)</div>
+      <div class="portfolio-body">
+        <div class="portfolio-cat">브라우저 확장</div>
+        <h3 class="portfolio-title">프로젝트명 (예: 탱크옥션 익스텐션)</h3>
+        <p class="portfolio-pl">
+          반복 작업으로 새던 시간을 → <strong>자동화 확장 프로그램</strong>으로 줄였습니다.
+        </p>
+        <div class="portfolio-tags">
+          <span class="tag">Chrome Extension</span>
+          <span class="tag">JavaScript</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ▼ 예시 카드 3 -->
+    <div class="portfolio-card reveal">
+      <div class="portfolio-thumb">스크린샷 들어갈 자리 (16:10)</div>
+      <div class="portfolio-body">
+        <div class="portfolio-cat">프로토타입</div>
+        <h3 class="portfolio-title">프로젝트명 (예: 로우메이트)</h3>
+        <p class="portfolio-pl">
+          아이디어를 빠르게 → <strong>동작하는 프로토타입</strong>으로 검증했습니다.
+        </p>
+        <div class="portfolio-tags">
+          <span class="tag">React</span>
+          <span class="tag">Supabase</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <p class="portfolio-empty">* 더 많은 작업물과 상세 케이스는 문의 시 보여드립니다.</p>
+</section>
+
 <!-- REVIEWS (크몽 후기) -->
 <section id="reviews">
   <div class="section-label">REVIEWS</div>
@@ -2070,8 +2222,6 @@
 찾는다면 적극 권해드립니다.</div>
       <div class="review-footer">
         <span class="meta">작업일 · 24시간 이내</span>
-        <span class="meta">·</span>
-        <span class="meta">주문 금액 · 5만원 미만</span>
       </div>
     </div>
 
@@ -2096,8 +2246,6 @@
 풀스택 개발이 필요한 분들께 진정 강추합니다.</div>
       <div class="review-footer">
         <span class="meta">작업일 · 24시간 이내</span>
-        <span class="meta">·</span>
-        <span class="meta">주문 금액 · 5만원 미만</span>
         <span class="cat">IT 솔루션</span>
       </div>
     </div>
@@ -2117,7 +2265,6 @@
 대응도 빠르고 척척 잘 해주시네요.
 추후 AS도 약속하시고요.</div>
       <div class="review-footer">
-        <span class="meta">100만원 ~ 200만원</span>
         <span class="cat">IT 솔루션</span>
       </div>
     </div>
@@ -2134,8 +2281,6 @@
       <div class="review-text">감사합니다. 작업물이 진짜 빠릅니다.</div>
       <div class="review-footer">
         <span class="meta">작업일 · 2일</span>
-        <span class="meta">·</span>
-        <span class="meta">100만원 ~ 200만원</span>
       </div>
     </div>
 
@@ -2151,7 +2296,6 @@
       <div class="review-text">늦은 시간까지 친절하게 답변해주시고
 다음에 또 맡길게여 :)</div>
       <div class="review-footer">
-        <span class="meta">5만원 ~ 10만원</span>
         <span class="cat">헬스 / 스포츠</span>
       </div>
     </div>
@@ -2210,6 +2354,13 @@
     <div class="reveal">
       <div class="contact-info">
         <div class="contact-row">
+          <div class="contact-icon">📞</div>
+          <div>
+            <div class="label">전화 문의</div>
+            <div class="value"><a href="tel:+821086773480" style="color:var(--text);text-decoration:none;">010-8677-3480</a></div>
+          </div>
+        </div>
+        <div class="contact-row">
           <div class="contact-icon">📧</div>
           <div>
             <div class="label">이메일 문의</div>
@@ -2241,7 +2392,7 @@
           <div class="contact-icon">📍</div>
           <div>
             <div class="label">사업장 주소</div>
-            <div class="value">경기도 김포시 김포한강2로</div>
+            <div class="value">경기도 김포시</div>
           </div>
         </div>
       </div>
@@ -2329,7 +2480,8 @@
         상호 · 주식회사 한지<br>
         대표 · 한용우<br>
         사업자등록번호 · 704-86-02287<br>
-        주소 · 경기도 김포시 김포한강2로<br>
+        주소 · 경기도 김포시<br>
+        전화 · <a href="tel:+821086773480" style="color:#C7CCD3;">010-8677-3480</a><br>
         이메일 · <a href="mailto:nasms88@naver.com" style="color:#C7CCD3;">nasms88@naver.com</a>
       </p>
     </div>
