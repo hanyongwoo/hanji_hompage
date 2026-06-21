@@ -167,7 +167,7 @@
       "name": "개발자 경력이 어떻게 되시나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "국내 대기업 커넥티드카·엔터프라이즈 시스템 개발, 신세계아이앤씨 4년, 오비맥주 PM 4년 등 대기업에서 12년간 실무 경험을 쌓은 시니어 풀스택 개발자가 직접 작업합니다."
+        "text": "국민대학교 컴퓨터공학 학사 취득 후 한국IBM, 아이비즈소프트웨어, 신세계아이앤씨, 오비맥주, 국내 대기업 커넥티드카·엔터프라이즈 시스템 개발 등 대기업·SI 환경에서 12년간 실무 경험을 쌓은 시니어 풀스택 개발자가 직접 작업합니다."
       }
     },
     {
@@ -883,6 +883,83 @@
     font-weight: 700;
   }
 
+  /* ── CAREER TIMELINE ── */
+  .career-timeline {
+    position: relative;
+    max-width: 760px;
+    margin: 0 auto;
+    padding-left: 28px;
+  }
+  .career-timeline::before {
+    content: '';
+    position: absolute;
+    left: 5px; top: 8px; bottom: 8px;
+    width: 2px;
+    background: linear-gradient(180deg, var(--primary) 0%, var(--border) 100%);
+  }
+  .tl-item {
+    position: relative;
+    padding: 0 0 32px 30px;
+  }
+  .tl-item:last-child { padding-bottom: 0; }
+  .tl-item::before {
+    content: '';
+    position: absolute;
+    left: -28px; top: 5px;
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 2.5px solid var(--primary);
+    box-shadow: 0 0 0 4px var(--surface);
+  }
+  .tl-item.now::before { background: var(--primary); }
+  .tl-item.edu::before { border-color: var(--accent); }
+  .tl-item.edu .tl-period { color: var(--accent); }
+  .tl-period {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .tl-now-badge {
+    font-size: 10px;
+    font-weight: 800;
+    color: #fff;
+    background: var(--primary);
+    padding: 1px 8px;
+    border-radius: 100px;
+    letter-spacing: 0.5px;
+  }
+  .tl-head {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 6px;
+  }
+  .tl-company {
+    font-family: 'SUIT Variable', SUIT, sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--text);
+    letter-spacing: -0.02em;
+  }
+  .tl-role {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--sub);
+  }
+  .tl-desc {
+    font-size: 14px;
+    color: var(--sub);
+    line-height: 1.8;
+  }
+
   /* ── ASSURANCE (걱정 NO) ── */
   #assurance {
     padding: 110px 60px;
@@ -1217,6 +1294,25 @@
   }
   .portfolio-pl strong { color: var(--primary-dk); font-weight: 700; }
   .portfolio-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 16px; }
+  .portfolio-thumb { position: relative; }
+  .thumb-badge {
+    position: absolute;
+    left: 12px; bottom: 12px;
+    background: rgba(31,42,55,0.78);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 5px 11px;
+    border-radius: 100px;
+    letter-spacing: 0.3px;
+    backdrop-filter: blur(2px);
+  }
+  .portfolio-note {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-top: 10px;
+  }
   .portfolio-empty {
     text-align: center;
     font-size: 13px;
@@ -1712,8 +1808,7 @@
   <ul id="navMenu">
     <li><a href="#career">대표 경력</a></li>
     <li><a href="#services">서비스</a></li>
-    <!-- 포트폴리오 콘텐츠 채운 뒤 아래 한 줄 주석 해제 -->
-    <!-- <li><a href="#portfolio">포트폴리오</a></li> -->
+    <li><a href="#portfolio">포트폴리오</a></li>
     <li><a href="#reviews">고객 후기</a></li>
     <li><a href="#process">진행절차</a></li>
     <li><a href="#contact" class="nav-cta">문의하기</a></li>
@@ -1820,42 +1915,90 @@
     </div>
     <div class="right reveal">
       <p>
-        대표 개발자는 <strong>신세계아이앤씨</strong>, <strong>오비맥주</strong>를 거쳐 현재
+        대표 개발자는 <strong>국민대학교 컴퓨터공학</strong> 학사 취득 후 <strong>한국IBM</strong>,
+        <strong>아이비즈소프트웨어</strong>, <strong>신세계아이앤씨</strong>, <strong>오비맥주</strong>를 거쳐
         <strong>국내 대기업 커넥티드카 · 엔터프라이즈 시스템</strong> 개발까지 12년간 실무를 경험했습니다. 단순한 외주 개발사가 아닌,
         엔터프라이즈 환경에서 다져진 안정성과 책임감을 그대로 담아 작업합니다.
       </p>
     </div>
   </div>
-  <div class="career-list">
-    <div class="career-card reveal">
-      <div class="period">2021 — 현재</div>
-      <div class="company">국내 대기업 · 커넥티드카</div>
-      <div class="role">풀스택 개발 · 시스템 설계</div>
-      <p class="desc">
-        국내 대기업의 커넥티드카·엔터프라이즈 핵심 시스템 풀스택 개발을 맡아,
-        설계부터 배포·운영까지 엔터프라이즈급 품질로 수행하고 있습니다.
+  <div class="career-timeline reveal">
+    <div class="tl-item edu">
+      <div class="tl-period">🎓 학사 졸업</div>
+      <div class="tl-head">
+        <span class="tl-company">국민대학교 컴퓨터공학과</span>
+        <span class="tl-role">학사 · Computer Science</span>
+      </div>
+      <p class="tl-desc">
+        컴퓨터공학을 전공하며 자료구조·알고리즘·운영체제·데이터베이스 등
+        소프트웨어 개발의 탄탄한 기본기를 다졌습니다.
       </p>
-      <span class="group-tag">엔터프라이즈 시스템</span>
     </div>
-    <div class="career-card reveal">
-      <div class="period">2013 — 2017 · 4년</div>
-      <div class="company">신세계아이앤씨</div>
-      <div class="role">시스템 개발 · 운영</div>
-      <p class="desc">
-        신세계 그룹사 IT 시스템 개발과 운영을 담당하며,
-        대규모 트래픽 환경에서의 안정적인 서비스 구축 경험을 쌓았습니다.
+    <div class="tl-item">
+      <div class="tl-period">2014</div>
+      <div class="tl-head">
+        <span class="tl-company">한국IBM</span>
+        <span class="tl-role">금융 시스템 유지보수</span>
+      </div>
+      <p class="tl-desc">
+        SC제일은행 금융 시스템 유지보수를 담당하며, 미션 크리티컬한 엔터프라이즈
+        환경의 운영 안정성과 장애 대응을 경험했습니다.
       </p>
-      <span class="group-tag">신세계 그룹</span>
     </div>
-    <div class="career-card reveal">
-      <div class="period">2017 — 2021 · 4년</div>
-      <div class="company">오비맥주</div>
-      <div class="role">프로젝트 매니저 (PM)</div>
-      <p class="desc">
+    <div class="tl-item">
+      <div class="tl-period">2015 — 2016</div>
+      <div class="tl-head">
+        <span class="tl-company">제이티엘소프트</span>
+        <span class="tl-role">연구 · 개발</span>
+      </div>
+      <p class="tl-desc">
+        Visual Java 기반 연구 개발과 GS(Good Software) 인증 취득 협업을 수행하며,
+        표준화된 품질 검증과 소프트웨어 인증 프로세스를 익혔습니다.
+      </p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-period">2017 — 2019</div>
+      <div class="tl-head">
+        <span class="tl-company">아이비즈소프트웨어</span>
+        <span class="tl-role">프론트엔드 · 백엔드 개발</span>
+      </div>
+      <p class="tl-desc">
+        아시아나항공, 롯데커머스 등 대기업 사이트 차세대 프로젝트에 프론트·백엔드
+        개발자로 참여하며, 대규모 트래픽 서비스의 풀스택 구축 역량을 다졌습니다.
+      </p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-period">2019 — 2022</div>
+      <div class="tl-head">
+        <span class="tl-company">신세계아이앤씨</span>
+        <span class="tl-role">시스템 개발 · 운영</span>
+      </div>
+      <p class="tl-desc">
+        신세계 그룹사 IT 시스템 개발·운영을 담당하며, 대규모 트래픽 환경에서의
+        안정적인 서비스 구축 경험을 쌓았습니다.
+      </p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-period">2022 — 2024</div>
+      <div class="tl-head">
+        <span class="tl-company">오비맥주</span>
+        <span class="tl-role">프로젝트 매니저 (PM)</span>
+      </div>
+      <p class="tl-desc">
         다수의 IT 프로젝트를 PM으로 리딩하며 요구사항 정의, 일정 관리,
         이해관계자 커뮤니케이션 전 과정을 책임졌습니다.
       </p>
-      <span class="group-tag">AB InBev 그룹</span>
+    </div>
+    <div class="tl-item">
+      <div class="tl-period">2024 — 2026</div>
+      <div class="tl-head">
+        <span class="tl-company">국내 대기업 · 커넥티드카</span>
+        <span class="tl-role">풀스택 개발 · 시스템 설계</span>
+      </div>
+      <p class="tl-desc">
+        국내 대기업의 커넥티드카·엔터프라이즈 핵심 시스템 풀스택 개발을 맡아,
+        설계부터 배포·운영까지 엔터프라이즈급 품질로 수행했습니다.
+      </p>
     </div>
   </div>
 </section>
@@ -2103,22 +2246,7 @@
 </section>
 
 <!-- PORTFOLIO -->
-<!--
-  ███ 포트폴리오 콘텐츠 채우는 법 ███
-  아래 .portfolio-card 를 실제 프로젝트로 교체하세요. 카드당 채울 4가지:
-   1) 썸네일: <div class="portfolio-thumb"> 안의 안내문구를
-              <img src="images/프로젝트명.png" alt="프로젝트 설명"> 로 교체
-              (이미지 비율 16:10 권장, images/ 폴더에 넣기)
-   2) 카테고리: .portfolio-cat (예: 웹 서비스 / 브라우저 확장 / 프로토타입)
-   3) 제목: .portfolio-title (예: 파나나 / 탱크옥션 익스텐션 / 로우메이트)
-   4) 문제→해결 한 줄: .portfolio-pl
-              (예: "수기 정산으로 새던 시간을 <strong>자동 집계 대시보드</strong>로 줄였습니다.")
-   * 클라이언트 동의가 없으면 회사명은 빼고 "이커머스 스타트업"처럼 익명화하세요.
-   * 카드 수는 자유 — 3개 권장, 최소 2개. 콘텐츠가 준비될 때까지는 이 섹션을
-     nav(#portfolio 링크)와 함께 숨겨두는 것도 방법입니다.
--->
-<!-- 콘텐츠 채우면 아래 <section> 의 hidden 속성과 style="display:none" 을 지워 공개하세요 -->
-<section id="portfolio" hidden style="display:none">
+<section id="portfolio">
   <div class="section-label">PORTFOLIO</div>
   <h2 class="section-title reveal">말보다 <span>실제 결과물</span>로 보여드립니다</h2>
   <p class="section-intro reveal">
@@ -2127,50 +2255,113 @@
   </p>
   <div class="portfolio-grid">
 
-    <!-- ▼ 예시 카드 1 — 실제 내용으로 교체하세요 -->
+    <!-- 랭뷰 (Langview) -->
     <div class="portfolio-card reveal">
-      <div class="portfolio-thumb">스크린샷 들어갈 자리 (16:10)</div>
+      <div class="portfolio-thumb">
+        <img src="images/pf-langview.webp" alt="랭뷰 - 다국어 실시간 AI 자동 번역 화면" loading="lazy">
+      </div>
       <div class="portfolio-body">
-        <div class="portfolio-cat">웹 서비스</div>
-        <h3 class="portfolio-title">프로젝트명 (예: 파나나)</h3>
+        <div class="portfolio-cat">AI · 실시간 번역</div>
+        <h3 class="portfolio-title">랭뷰 (Langview)</h3>
         <p class="portfolio-pl">
-          어떤 문제가 있었고 → <strong>어떻게 풀었는지</strong>를 한 줄로 적어주세요.
+          느리고 부정확하던 실시간 통역을 → <strong>Soniox STT + Google STT 하이브리드</strong>로 고도화해
+          인식 정확도와 응답 속도를 동시에 끌어올린 다국어 실시간 AI 자동 번역 서비스.
         </p>
         <div class="portfolio-tags">
-          <span class="tag">Next.js</span>
-          <span class="tag">Spring Boot</span>
+          <span class="tag">AI STT</span>
+          <span class="tag">Soniox</span>
+          <span class="tag">Google STT</span>
+          <span class="tag">실시간 번역</span>
         </div>
       </div>
     </div>
 
-    <!-- ▼ 예시 카드 2 -->
+    <!-- 농수산물 B2B ERP (착한식탁) -->
     <div class="portfolio-card reveal">
-      <div class="portfolio-thumb">스크린샷 들어갈 자리 (16:10)</div>
+      <div class="portfolio-thumb">
+        <img src="images/pf-chakhantable.webp" alt="농수산물 B2B ERP 대시보드 화면" loading="lazy">
+      </div>
       <div class="portfolio-body">
-        <div class="portfolio-cat">브라우저 확장</div>
-        <h3 class="portfolio-title">프로젝트명 (예: 탱크옥션 익스텐션)</h3>
+        <div class="portfolio-cat">B2B · ERP / RPA</div>
+        <h3 class="portfolio-title">농수산물 B2B ERP 플랫폼</h3>
         <p class="portfolio-pl">
-          반복 작업으로 새던 시간을 → <strong>자동화 확장 프로그램</strong>으로 줄였습니다.
+          수기 발·수신과 흩어진 거래 관리를 → <strong>카페24 기반 웹 서비스</strong>로,
+          <strong>아톡(ATALK) RPA 자동 수집</strong>과 샤방넷·주문·결제 외부 연동으로
+          매출 집계까지 자동화한 농수산물 유통 ERP.
         </p>
         <div class="portfolio-tags">
-          <span class="tag">Chrome Extension</span>
-          <span class="tag">JavaScript</span>
+          <span class="tag">카페24</span>
+          <span class="tag">ERP</span>
+          <span class="tag">RPA 자동화</span>
+          <span class="tag">아톡(ATALK)</span>
+          <span class="tag">샤방넷 연동</span>
+          <span class="tag">결제 연동</span>
+          <span class="tag">매출 집계</span>
         </div>
       </div>
     </div>
 
-    <!-- ▼ 예시 카드 3 -->
+    <!-- 삭스킹 (Socks King) -->
     <div class="portfolio-card reveal">
-      <div class="portfolio-thumb">스크린샷 들어갈 자리 (16:10)</div>
+      <div class="portfolio-thumb">
+        <img src="images/pf-socksking.webp" alt="삭스킹 - 3D 양말 커스터마이징 화면" loading="lazy">
+      </div>
       <div class="portfolio-body">
-        <div class="portfolio-cat">프로토타입</div>
-        <h3 class="portfolio-title">프로젝트명 (예: 로우메이트)</h3>
+        <div class="portfolio-cat">3D · 커머스</div>
+        <h3 class="portfolio-title">삭스킹 (Socks King)</h3>
         <p class="portfolio-pl">
-          아이디어를 빠르게 → <strong>동작하는 프로토타입</strong>으로 검증했습니다.
+          글로만 주문하던 양말 제작을 → <strong>브라우저 3D 모델로 직접 디자인하고 바로 주문</strong>하는
+          경험으로. 색상·로고·텍스트·패턴 커스터마이징부터 주문 전송까지 연결한 D2C 플랫폼.
         </p>
         <div class="portfolio-tags">
-          <span class="tag">React</span>
-          <span class="tag">Supabase</span>
+          <span class="tag">Three.js</span>
+          <span class="tag">3D · WebGL</span>
+          <span class="tag">UV 매핑</span>
+          <span class="tag">주문 연동</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 특수교육 멀티미디어 (국가과제) -->
+    <div class="portfolio-card reveal">
+      <div class="portfolio-thumb">
+        <img src="images/pf-multimedia.webp" alt="장애 중/고등부 성인권 교육 멀티미디어 교재 화면" loading="lazy">
+      </div>
+      <div class="portfolio-body">
+        <div class="portfolio-cat">공공 · 국가과제</div>
+        <h3 class="portfolio-title">장애 중/고등부 성인권 교육 멀티미디어</h3>
+        <p class="portfolio-pl">
+          특수교육 전문기관과 함께한 <strong>정부 국가과제</strong>. 수어·자막·인터랙션을 갖춘
+          장애 중/고등부 성인권 교육 멀티미디어 교재를 개발했고, 높은 만족도로 2026년 후속 과제도 예정되어 있습니다.
+        </p>
+        <div class="portfolio-tags">
+          <span class="tag">멀티미디어</span>
+          <span class="tag">접근성</span>
+          <span class="tag">공공 프로젝트</span>
+          <span class="tag">인터랙티브</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 파나나 (Panana) -->
+    <div class="portfolio-card reveal">
+      <div class="portfolio-thumb">
+        유산균 이커머스
+        <span class="thumb-badge">개발 진행 중</span>
+      </div>
+      <div class="portfolio-body">
+        <div class="portfolio-cat">이커머스 · 진행 중</div>
+        <h3 class="portfolio-title">파나나 (Panana)</h3>
+        <p class="portfolio-pl">
+          유산균 D2C 이커머스 웹 플랫폼을 <strong>Next.js 풀스택</strong>으로 구축 중.
+          인증·다국어·결제·분석까지 운영에 필요한 기능을 한 흐름으로 설계하고 있습니다.
+        </p>
+        <div class="portfolio-tags">
+          <span class="tag">Next.js · React</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">Prisma · PostgreSQL</span>
+          <span class="tag">TossPayments</span>
+          <span class="tag">next-intl</span>
         </div>
       </div>
     </div>
