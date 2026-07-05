@@ -66,13 +66,13 @@ ${escape(message)}
       </div>
       ` : ''}
       <p style="margin-top:24px;font-size:12px;color:#8C97A3;">
-        본 메일은 hanji.co.kr 문의 폼에서 자동 발송되었습니다.
+        본 메일은 hanjilabs.co.kr 문의 폼에서 자동 발송되었습니다.
       </p>
     </div>
   `;
 
   const emailPayload = {
-    from: '주식회사 한지 <onboarding@resend.dev>',
+    from: '주식회사 한지 <noreply@hanjilabs.co.kr>',
     to: [toEmail],
     reply_to: contact.includes('@') ? contact : undefined,
     subject,
