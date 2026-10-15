@@ -4,7 +4,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://hanjilabs.co.kr/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://hanjilabs.co.kr/"/>
@@ -20,9 +20,23 @@
   </url>
   <url>
     <loc>https://hanjilabs.co.kr/web</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://hanjilabs.co.kr/web"/>
+  </url>
+  <url>
+    <loc>https://hanjilabs.co.kr/shop</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://hanjilabs.co.kr/shop"/>
+  </url>
+  <url>
+    <loc>https://hanjilabs.co.kr/ai</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://hanjilabs.co.kr/ai"/>
   </url>
 </urlset>

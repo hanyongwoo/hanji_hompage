@@ -29,9 +29,18 @@ export default async function handler(req, res) {
     try { body = JSON.parse(body); } catch { body = {}; }
   }
 
-  const { name = '', contact = '', type = '', message = '', attachment = null } = body || {};
+  const {
+    name = '', contact = '', type = '', message = '',
+    budget = '', timeline = '', source = '', website = '',
+    attachment = null
+  } = body || {};
 
-  if (!name.trim() || !contact.trim() || !message.trim()) {
+  // 스팸 봇 방지 (사람에게는 보이지 않는 필드가 채워져 있으면 조용히 무시)
+  if (website && String(website).trim()) {
+    return res.status(200).json({ ok: true });
+  }
+
+  if (!String(name).trim() || !String(contact).trim() || !String(message).trim()) {
     return res.status(400).json({ ok: false, error: '필수 항목이 비어 있습니다.' });
   }
 
@@ -42,7 +51,7 @@ export default async function handler(req, res) {
   const escape = (s) => String(s)
     .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
-  const subject = `[한지 홈페이지 문의] ${name} (${type || '서비스 미선택'})`;
+  const subject = `[한지 홈페이지 문의] ${name} (${type || '유형 미선택'}${budget ? ' · ' + budget : ''})`;
 
   const html = `
     <div style="font-family:'Apple SD Gothic Neo','맑은 고딕',sans-serif;line-height:1.7;color:#1F2A37;">
@@ -53,7 +62,13 @@ export default async function handler(req, res) {
         <tr><td style="padding:8px 12px;background:#F4F1EB;font-weight:bold;">연락처</td>
             <td style="padding:8px 12px;border-bottom:1px solid #E5E1D8;">${escape(contact)}</td></tr>
         <tr><td style="padding:8px 12px;background:#F4F1EB;font-weight:bold;">서비스 유형</td>
-            <td style="padding:8px 12px;border-bottom:1px solid #E5E1D8;">${escape(type)}</td></tr>
+            <td style="padding:8px 12px;border-bottom:1px solid #E5E1D8;">${escape(type || '미선택')}</td></tr>
+        <tr><td style="padding:8px 12px;background:#F4F1EB;font-weight:bold;">예상 예산</td>
+            <td style="padding:8px 12px;border-bottom:1px solid #E5E1D8;">${escape(budget || '상담 후 결정')}</td></tr>
+        <tr><td style="padding:8px 12px;background:#F4F1EB;font-weight:bold;">희망 일정</td>
+            <td style="padding:8px 12px;border-bottom:1px solid #E5E1D8;">${escape(timeline || '미정')}</td></tr>
+        <tr><td style="padding:8px 12px;background:#F4F1EB;font-weight:bold;">유입 버튼</td>
+            <td style="padding:8px 12px;border-bottom:1px solid #E5E1D8;color:#8C97A3;">${escape(source || '-')}</td></tr>
       </table>
       <h3 style="margin-top:24px;color:#2E7D6B;">프로젝트 내용</h3>
       <div style="background:#FBFAF7;padding:16px;border-left:3px solid #2E7D6B;white-space:pre-wrap;">
